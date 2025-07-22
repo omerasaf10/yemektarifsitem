@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezzetli Tarifler Durağı - Ev Yapımı Tarifler</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <i class="fas fa-utensils logo-icon"></i>
+                    <span class="logo-text">Lezzet Durağı</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-item active">Anasayfa</a></li>
+                    <li><a href="#featured-recipes" class="nav-item">Öne Çıkanlar</a></li>
+                    <li><a href="#categories" class="nav-item">Kategoriler</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Mutfağınızda Yeni Lezzetlere Yelken Açın!</h1>
+                <p>Binlerce denenmiş tarif, pratik ipuçları ve ilham verici içeriklerle yemek yapma deneyiminizi zirveye taşıyın.</p>
+                <a href="#featured-recipes" class="btn btn-primary">Tarifleri Keşfet</a>
+            </div>
+        </section>
+
+        <section id="featured-recipes" class="common-section bg-light">
+            <div class="container">
+                <h2>Öne Çıkan Tarifler</h2>
+                <div class="recipe-cards">
+                    <div class="recipe-card">
+                        <img src="images/kofte.jpg" alt="Anne Köftesi" class="recipe-img">
+                        <h3>Anne Köftesi</h3>
+                        <p>Klasik bir lezzet, her zaman favori.</p>
+                        <a href="tarifler/kofte.html" class="btn btn-secondary">Tarife Git</a>
+                    </div>
+                    <div class="recipe-card">
+                        <img src="images/makarna.jpg" alt="Pesto Makarna" class="recipe-img">
+                        <h3>Pesto Makarna</h3>
+                        <p>Hızlı ve lezzetli bir İtalyan klasiği.</p>
+                        <a href="tarifler/makarna.html" class="btn btn-secondary">Tarife Git</a>
+                    </div>
+                    <div class="recipe-card">
+                        <img src="images/salata.jpg" alt="Akdeniz Salata" class="recipe-img">
+                        <h3>Akdeniz Salata</h3>
+                        <p>Taze ve sağlıklı, hafif bir seçenek.</p>
+                        <a href="tarifler/salata.html" class="btn btn-secondary">Tarife Git</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories" class="common-section bg-white">
+            <div class="container">
+                <h2>Tarif Kategorileri</h2>
+                <div class="category-cards">
+                    <div class="category-card">
+                        <i class="fas fa-drumstick-bite category-icon"></i>
+                        <h3>Ana Yemekler</h3>
+                        <p>Et, tavuk ve sebze ağırlıklı lezzetler.</p>
+                        <a href="ana-yemekler.html" class="btn btn-tertiary">Tümünü Gör</a>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-cookie-bite category-icon"></i>
+                        <h3>Tatlılar</h3>
+                        <p>Şerbetli, sütlü ve hamur işi tatlılar.</p>
+                        <a href="tatlilar.html" class="btn btn-tertiary">Tümünü Gör</a>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-pizza-slice category-icon"></i>
+                        <h3>Hamur İşleri</h3>
+                        <p>Börekler, poğaçalar ve ekmekler.</p>
+                        <a href="hamur-isleri.html" class="btn btn-tertiary">Tümünü Gör</a>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-seedling category-icon"></i>
+                        <h3>Salatalar</h3>
+                        <p>Her mevsim taze ve hafif salata tarifleri.</p>
+                        <a href="salatalar.html" class="btn btn-tertiary">Tümünü Gör</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+    <footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2025 Lezzetli Tarifler Durağı. Tüm Hakları Saklıdır.</p>
+        <div class="footer-links">
+            <a href="#">Gizlilik Politikası</a>
+            <a href="#">Kullanım Koşulları</a>
+            <a href="404.html">Sayfa Bulunamadı?</a> </div>
+    </div>
+</footer>
+
+    <script>
+        // Basit bir aktif menü vurgulama
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-item');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Scroll ile aktif menü sınıfı ekleme (isteğe bağlı)
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 150) { // Navbar yüksekliği kadar offset
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.href.includes(current)) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayfa Bulunamadı - Lezzetli Tarifler Durağı</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        /* Bu stil bloğu sadece 404 sayfasına özgüdür ve genel temaya uyum sağlar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* style.css'deki fontu kullan */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color); /* style.css'deki rengi kullan */
+            color: var(--text-color); /* style.css'deki rengi kullan */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Sayfanın dikeyde ortalanmasını sağlar */
+            flex-direction: column;
+        }
+        .container-404 {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 50px;
+            border-radius: 10px;
+            background-color: var(--white); /* style.css'deki rengi kullan */
+            box-shadow: var(--shadow-medium); /* style.css'deki gölgeyi kullan */
+        }
+        h1 {
+            color: var(--primary-color); /* style.css'deki ana rengi kullan */
+            font-size: 5em; /* Büyük ve dikkat çekici */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        h2.error-heading {
+            color: var(--heading-color); /* style.css'deki başlık rengi */
+            font-size: 2.2em;
+            margin-bottom: 25px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            color: #555;
+        }
+        a.return-home-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px; /* Daha yumuşak kenarlar için */
+            text-decoration: none;
+            font-weight: bold;
+            background-color: var(--primary-color);
+            color: var(--white);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 1.1em;
+        }
+        a.return-home-btn:hover {
+            background-color: #d35400; /* Primary color'ın biraz daha koyusu */
+            transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+        }
+
+        /* Mobil Duyarlılık (opsiyonel, style.css'deki media query'ler zaten var) */
+        @media (max-width: 768px) {
+            .container-404 {
+                padding: 30px;
+                margin: 0 15px; /* Kenarlardan boşluk bırak */
+            }
+            h1 {
+                font-size: 4em;
+            }
+            h2.error-heading {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+            a.return-home-btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-404">
+        <h1>404</h1>
+        <h2 class="error-heading">Sayfa Bulunamadı</h2>
+        <p>Üzgünüz, aradığınız tarif veya sayfa mutfakta kaybolmuş gibi görünüyor.</p>
+        <p>Belki de yanlış bir lezzetin peşine düşmüşsünüzdür? Ana sayfaya dönerek yeni lezzetler keşfedebilirsin.</p>
+        <a href="index.html" class="return-home-btn">Anasayfaya Geri Dön</a>
+    </div>
+</body>
+</html>
